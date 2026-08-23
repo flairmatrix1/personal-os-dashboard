@@ -309,6 +309,35 @@ def apply_llm_enrichment(items: list[dict[str, object]], api_key: str | None = N
         return items, f"failed: {type(exc).__name__}"
 
 
+def merge_existing_social(fresh_items: list[dict[str, object]], existing: dict[str, object],
+                          now: datetime, max_age_days: int, max_items: int) -> list[dict[str, object]]:
+    cutoff = now - timedelta(days=max_age_days)
+    previous = [item for item in existing.get("items", []) if isinstance(item, dict)]
+    previous_by_id = {str(item.get("id")): item for item in previous if item.get("id")}
+    editorial_keys = ("title", "originalTitle", "summary", "pollQuestion", "pollOptions", "editorialMode")
+    merged: list[dict[str, object]] = []
+    for fresh in fresh_items:
+        item = dict(fresh)
+        old = previous_by_id.get(str(item.get("id")))
+        if old and old.get("editorialMode") == "hermes":
+            for key in editorial_keys:
+                if key in old:
+                    item[key] = old[key]
+        merged.append(item)
+    for old in previous:
+        if old.get("editorialMode") != "hermes" or old.get("platform") not in {"X", "Threads"}:
+            continue
+        published = parse_date(str(old.get("publishedAt", "")))
+        if published and published >= cutoff:
+            merged.append(dict(old))
+    unique: dict[str, dict[str, object]] = {}
+    for item in merged:
+        key = str(item.get("id") or item.get("sourceUrl"))
+        if key:
+            unique[key] = item
+    return sorted(unique.values(), key=lambda item: (float(item.get("engagementScore", 0)), str(item.get("publishedAt", ""))), reverse=True)[:max_items]
+
+
 def main() -> int:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     now = datetime.now(timezone.utc)
@@ -321,6 +350,11 @@ def main() -> int:
         return 1
     unique = {item["sourceUrl"]: item for item in collected if item.get("sourceUrl")}
     selected = sorted(unique.values(), key=lambda item: (item["engagementScore"], item["publishedAt"]), reverse=True)[: int(config["maxItems"])]
+    try:
+        existing = json.loads(OUTPUT_PATH.read_text(encoding="utf-8")) if OUTPUT_PATH.exists() else {}
+    except (OSError, json.JSONDecodeError):
+        existing = {}
+    selected = merge_existing_social(selected, existing, now, int(config["maxAgeDays"]), int(config["maxItems"]))
     selected, llm_status = apply_llm_enrichment(selected)
     payload = {
         "updatedAt": now.isoformat(timespec="seconds"),

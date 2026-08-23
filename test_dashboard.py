@@ -120,6 +120,17 @@ class DashboardContractTests(unittest.TestCase):
         self.assertEqual(enriched[0]["pollOptions"][0], "RTX")
         self.assertEqual(enriched[0]["sourceUrl"], "https://example.com/post")
 
+    def test_existing_hermes_social_items_survive_base_refresh(self):
+        module = load_community_module()
+        now = module.datetime(2026, 8, 23, 10, tzinfo=module.timezone.utc)
+        fresh_reddit = [{"id": "reddit", "platform": "Reddit", "publishedAt": "2026-08-23T09:00:00Z", "engagementScore": 80}]
+        existing = {"items": [
+            {"id": "x-one", "platform": "X", "publishedAt": "2026-08-23T08:00:00Z", "engagementScore": 90, "editorialMode": "hermes"},
+            {"id": "old-thread", "platform": "Threads", "publishedAt": "2026-08-10T08:00:00Z", "engagementScore": 99, "editorialMode": "hermes"},
+        ]}
+        merged = module.merge_existing_social(fresh_reddit, existing, now, max_age_days=3, max_items=18)
+        self.assertEqual([item["id"] for item in merged], ["x-one", "reddit"])
+
     def test_no_secret_placeholders(self):
         combined = "\n".join(
             path.read_text(encoding="utf-8")
