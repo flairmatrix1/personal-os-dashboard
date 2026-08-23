@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T09:52:08+00:00",
+  "updatedAt": "2026-08-23T09:52:51+00:00",
   "methodNote": "Reddit оценивается по позиции в Hot; X — по публичным метрикам; Threads — по TOP-поиску. Это сигналы обсуждаемости, не исследование всей аудитории.",
   "items": [
     {
@@ -32,7 +32,7 @@
       "publishedAt": "2026-08-23T09:03:27Z",
       "category": "Игры",
       "signal": "hot",
-      "engagementScore": 99.9,
+      "engagementScore": 99.8,
       "engagementBasis": "Позиция #1 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Valve is now 30 years old. — что вы думаете?",
@@ -326,7 +326,7 @@
       "publishedAt": "2026-08-23T09:12:17Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 80.3,
+      "engagementScore": 80.2,
       "engagementBasis": "Позиция #6 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Playing Half Life 2 VR natively on Quest 3 will never get old, these classic experiences are the reason I love Standalone VR (especially when accompanied by certain plants... 👀❤️) — что вы думаете?",
