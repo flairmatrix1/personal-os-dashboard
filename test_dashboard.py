@@ -1,8 +1,18 @@
 import json
+import importlib.util
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+
+
+def load_community_module():
+    path = ROOT / "scripts/update_community.py"
+    spec = importlib.util.spec_from_file_location("update_community", path)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader
+    spec.loader.exec_module(module)
+    return module
 
 
 class DashboardContractTests(unittest.TestCase):
@@ -70,9 +80,11 @@ class DashboardContractTests(unittest.TestCase):
         self.assertIn("schedule:", workflow)
         self.assertIn("scripts/update_news.py", workflow)
         self.assertIn("scripts/update_community.py", workflow)
+        self.assertIn("OPENAI_API_KEY", workflow)
 
     def test_community_signal_contract(self):
         community = json.loads((ROOT / "community.json").read_text(encoding="utf-8"))
+        self.assertIn("llm", community["sourceStatus"])
         self.assertGreaterEqual(len(community["items"]), 5)
         for item in community["items"]:
             self.assertIn(item["platform"], {"Reddit", "X", "Threads"})
@@ -81,13 +93,40 @@ class DashboardContractTests(unittest.TestCase):
             self.assertGreaterEqual(len(item["pollOptions"]), 3)
             self.assertTrue(item["engagementBasis"])
 
+    def test_llm_enrichment_is_optional_without_api_key(self):
+        module = load_community_module()
+        items = [{"id": "one", "title": "A topic", "summary": "Context", "pollOptions": ["fallback"]}]
+        enriched, status = module.apply_llm_enrichment(items, api_key="")
+        self.assertEqual(enriched, items)
+        self.assertEqual(status, "disabled: OPENAI_API_KEY is not configured")
+
+    def test_llm_enrichment_updates_only_matching_items(self):
+        module = load_community_module()
+        items = [{"id": "one", "title": "RTX vs Radeon", "summary": "Original", "pollOptions": ["fallback"], "sourceUrl": "https://example.com/post"}]
+
+        def fake_request(payload, api_key):
+            self.assertEqual(api_key, "secret")
+            self.assertIn("RTX vs Radeon", json.dumps(payload, ensure_ascii=False))
+            return {"choices": [{"message": {"content": json.dumps({"items": [{
+                "id": "one",
+                "summaryRu": "Пользователи сравнивают видеокарты по цене и объёму памяти.",
+                "pollQuestion": "Что бы вы выбрали при одинаковой цене?",
+                "pollOptions": ["RTX", "Radeon", "Подожду тестов", "Останусь на старой карте"],
+            }]}, ensure_ascii=False)}}]}
+
+        enriched, status = module.apply_llm_enrichment(items, api_key="secret", request_fn=fake_request)
+        self.assertEqual(status, "ok")
+        self.assertEqual(enriched[0]["summary"], "Пользователи сравнивают видеокарты по цене и объёму памяти.")
+        self.assertEqual(enriched[0]["pollOptions"][0], "RTX")
+        self.assertEqual(enriched[0]["sourceUrl"], "https://example.com/post")
+
     def test_no_secret_placeholders(self):
         combined = "\n".join(
             path.read_text(encoding="utf-8")
             for path in ROOT.glob("*")
             if path.is_file() and path.suffix in {".html", ".json", ".md"}
         ).lower()
-        for forbidden in ("api_key", "bearer ", "token="):
+        for forbidden in ("sk-proj-", "ghp_", '"access_token":', "token="):
             self.assertNotIn(forbidden, combined)
 
 

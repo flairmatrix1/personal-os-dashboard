@@ -1,7 +1,49 @@
 {
-  "updatedAt": "2026-08-23T09:29:13+00:00",
+  "updatedAt": "2026-08-23T09:52:08+00:00",
   "methodNote": "Reddit оценивается по позиции в Hot; X — по публичным метрикам; Threads — по TOP-поиску. Это сигналы обсуждаемости, не исследование всей аудитории.",
   "items": [
+    {
+      "id": "9d5475576a949bfc",
+      "platform": "Reddit",
+      "community": "r/ValveIndex",
+      "title": "Controller Stick cap broke",
+      "summary": "The stick is now behaving weird for a while, in the Last few days i can Push the stick in or Out easily because Its Like loose and i can rotate the stick, the Cap came Off once. Does anybody knows what i can do?",
+      "publishedAt": "2026-08-23T09:48:37Z",
+      "category": "VR / PC VR",
+      "signal": "hot",
+      "engagementScore": 100.9,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/ValveIndex; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "Controller Stick cap broke — что вы думаете?",
+      "pollOptions": [
+        "Хочу попробовать",
+        "Интересно, но нужны тесты",
+        "Подожду развития технологии",
+        "Мне это не нужно"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/ValveIndex/comments/1vw2y66/controller_stick_cap_broke/"
+    },
+    {
+      "id": "3009531fa37cb794",
+      "platform": "Reddit",
+      "community": "r/Games",
+      "title": "Valve is now 30 years old.",
+      "summary": "Valve was officially founded on August 24 1996 by Gabe Newell and Mike Harrington. In 1998 they released Half-Life, which was revolutionary for the FPS genre. noclip produced a great documentary for its 20th Anniversary that I highly recommend. Valve then kept working on some things, which also included hiring the crea",
+      "publishedAt": "2026-08-23T09:03:27Z",
+      "category": "Игры",
+      "signal": "hot",
+      "engagementScore": 99.9,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "Valve is now 30 years old. — что вы думаете?",
+      "pollOptions": [
+        "Тема действительно цепляет",
+        "Интересно, но подожду отзывы",
+        "Не вижу в этом ничего нового",
+        "Хочу больше подтверждённых фактов"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/Games/comments/1vw26fa/valve_is_now_30_years_old/"
+    },
     {
       "id": "18688520a2cf3d08",
       "platform": "Reddit",
@@ -11,7 +53,7 @@
       "publishedAt": "2026-08-23T06:17:44Z",
       "category": "Компьютеры",
       "signal": "hot",
-      "engagementScore": 92.7,
+      "engagementScore": 92.2,
       "engagementBasis": "Позиция #2 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "RTX vs Radeon — что вы думаете?",
@@ -32,7 +74,7 @@
       "publishedAt": "2026-08-23T02:27:38Z",
       "category": "Компьютеры",
       "signal": "hot",
-      "engagementScore": 91.1,
+      "engagementScore": 90.6,
       "engagementBasis": "Позиция #1 среди Hot-постов r/hardware; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Google reportedly taps AMD to design next-generation TPU — hybrid AI ASIC could integrate on-package CPU cores for reinforcement learning — что вы думаете?",
@@ -53,7 +95,7 @@
       "publishedAt": "2026-08-23T05:03:28Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 91.0,
+      "engagementScore": 90.5,
       "engagementBasis": "Позиция #2 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "System Shock 2 - VR Mod — что вы думаете?",
@@ -66,6 +108,27 @@
       "sourceUrl": "https://www.reddit.com/r/virtualreality/comments/1vvxzle/system_shock_2_vr_mod/"
     },
     {
+      "id": "92f0855bb2eeab72",
+      "platform": "Reddit",
+      "community": "r/GamingLeaksAndRumours",
+      "title": "NateTheHate: A new Ori is what I was referring to. I do not have confirmation on if it will be at Gamescom yet.",
+      "summary": "https://www.resetera.com/threads/xbox-game-studios-ot-38.1592677/post-159474757",
+      "publishedAt": "2026-08-23T05:33:55Z",
+      "category": "Игры",
+      "signal": "hot",
+      "engagementScore": 87.4,
+      "engagementBasis": "Позиция #3 среди Hot-постов r/GamingLeaksAndRumours; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "NateTheHate: A new Ori is what I was referring to. I do not have confirmation on if it will be at Gamescom yet. — что вы думаете?",
+      "pollOptions": [
+        "Тема действительно цепляет",
+        "Интересно, но подожду отзывы",
+        "Не вижу в этом ничего нового",
+        "Хочу больше подтверждённых фактов"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1vvyjc5/natethehate_a_new_ori_is_what_i_was_referring_to/"
+    },
+    {
       "id": "d1e0f1a63998cb7d",
       "platform": "Reddit",
       "community": "r/buildapc",
@@ -74,7 +137,7 @@
       "publishedAt": "2026-08-23T08:18:14Z",
       "category": "Компьютеры",
       "signal": "hot",
-      "engagementScore": 87.5,
+      "engagementScore": 87.1,
       "engagementBasis": "Позиция #4 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Should I change thermal paste of my 1070 after 8 years? — что вы думаете?",
@@ -95,7 +158,7 @@
       "publishedAt": "2026-08-22T22:57:33Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 86.2,
+      "engagementScore": 85.7,
       "engagementBasis": "Позиция #1 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "GTA SA VR newest gameplay created by the same guy who made the new Vice City VR mod — что вы думаете?",
@@ -116,7 +179,7 @@
       "publishedAt": "2026-08-23T03:45:01Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 85.6,
+      "engagementScore": 85.1,
       "engagementBasis": "Позиция #3 среди Hot-постов r/OculusQuest; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Quest 1 on launch firmware — что вы думаете?",
@@ -129,25 +192,25 @@
       "sourceUrl": "https://www.reddit.com/r/OculusQuest/comments/1vvwik4/quest_1_on_launch_firmware/"
     },
     {
-      "id": "77f1490ddb72aa38",
+      "id": "784e59890adfd23b",
       "platform": "Reddit",
-      "community": "r/Games",
-      "title": "New Studio From Arkane Austin Devs Promises They Won’t Commit Another Redfall",
-      "summary": "",
-      "publishedAt": "2026-08-23T00:21:06Z",
-      "category": "Игры",
+      "community": "r/buildapc",
+      "title": "Second hand gpu",
+      "summary": "Hi, When buying a used GPU, how should I test it before I buy. Is there any easy way to test and compare to if it was new? Would I need to put it into a computer before hand or something?",
+      "publishedAt": "2026-08-23T09:38:50Z",
+      "category": "Компьютеры",
       "signal": "hot",
       "engagementScore": 84.7,
-      "engagementBasis": "Позиция #2 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementBasis": "Позиция #5 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
-      "pollQuestion": "New Studio From Arkane Austin Devs Promises They Won’t Commit Another Redfall — что вы думаете?",
+      "pollQuestion": "Second hand gpu — что вы думаете?",
       "pollOptions": [
-        "Тема действительно цепляет",
-        "Интересно, но подожду отзывы",
-        "Не вижу в этом ничего нового",
-        "Хочу больше подтверждённых фактов"
+        "Цена и производительность решают",
+        "Обновил(а) бы сейчас",
+        "Подожду новое поколение",
+        "Мне хватает текущего ПК"
       ],
-      "sourceUrl": "https://www.reddit.com/r/Games/comments/1vvse63/new_studio_from_arkane_austin_devs_promises_they/"
+      "sourceUrl": "https://www.reddit.com/r/buildapc/comments/1vw2s3e/second_hand_gpu/"
     },
     {
       "id": "82412c00060b4a9a",
@@ -158,7 +221,7 @@
       "publishedAt": "2026-08-22T21:52:12Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 84.7,
+      "engagementScore": 84.2,
       "engagementBasis": "Позиция #1 среди Hot-постов r/OculusQuest; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Imagine a Gaussian splats based photography game in VR — что вы думаете?",
@@ -171,48 +234,6 @@
       "sourceUrl": "https://www.reddit.com/r/OculusQuest/comments/1vvp1ii/imagine_a_gaussian_splats_based_photography_game/"
     },
     {
-      "id": "3009531fa37cb794",
-      "platform": "Reddit",
-      "community": "r/Games",
-      "title": "Valve is now 30 years old.",
-      "summary": "Valve was officially founded on August 24 1996 by Gabe Newell and Mike Harrington. In 1998 they released Half-Life, which was revolutionary for the FPS genre. noclip produced a great documentary for its 20th Anniversary that I highly recommend. Valve then kept working on some things, which also included hiring the crea",
-      "publishedAt": "2026-08-23T09:03:27Z",
-      "category": "Игры",
-      "signal": "hot",
-      "engagementScore": 84.5,
-      "engagementBasis": "Позиция #5 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
-      "metrics": {},
-      "pollQuestion": "Valve is now 30 years old. — что вы думаете?",
-      "pollOptions": [
-        "Тема действительно цепляет",
-        "Интересно, но подожду отзывы",
-        "Не вижу в этом ничего нового",
-        "Хочу больше подтверждённых фактов"
-      ],
-      "sourceUrl": "https://www.reddit.com/r/Games/comments/1vw26fa/valve_is_now_30_years_old/"
-    },
-    {
-      "id": "28e7da9d70bd4b97",
-      "platform": "Reddit",
-      "community": "r/Games",
-      "title": "Final Fantasy XII CO OP Mod Trailer Ivalice Together",
-      "summary": "",
-      "publishedAt": "2026-08-22T21:23:56Z",
-      "category": "Игры",
-      "signal": "hot",
-      "engagementScore": 84.0,
-      "engagementBasis": "Позиция #1 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
-      "metrics": {},
-      "pollQuestion": "Final Fantasy XII CO OP Mod Trailer Ivalice Together — что вы думаете?",
-      "pollOptions": [
-        "Хочу пережить любимую игру заново",
-        "Открою пропущенную классику",
-        "Интересны оба варианта",
-        "Не связываюсь с VR-модами"
-      ],
-      "sourceUrl": "https://www.reddit.com/r/Games/comments/1vvodxg/final_fantasy_xii_co_op_mod_trailer_ivalice/"
-    },
-    {
       "id": "4812e2e74e0e56b9",
       "platform": "Reddit",
       "community": "r/buildapc",
@@ -221,7 +242,7 @@
       "publishedAt": "2026-08-23T02:16:25Z",
       "category": "Компьютеры",
       "signal": "hot",
-      "engagementScore": 83.7,
+      "engagementScore": 83.2,
       "engagementBasis": "Позиция #3 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Upgrading from a GTX 660 ($350-$380 used budget): Stuck between RTX 3080, RTX 5060, or Intel Arc B580? — что вы думаете?",
@@ -242,7 +263,7 @@
       "publishedAt": "2026-08-22T21:06:01Z",
       "category": "AR / MR",
       "signal": "hot",
-      "engagementScore": 83.6,
+      "engagementScore": 83.1,
       "engagementBasis": "Позиция #1 среди Hot-постов r/augmentedreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Tiny worlds in the palm of your hand — что вы думаете?",
@@ -255,27 +276,6 @@
       "sourceUrl": "https://www.reddit.com/r/augmentedreality/comments/1vvnym4/tiny_worlds_in_the_palm_of_your_hand/"
     },
     {
-      "id": "9e7142ab51c6eb84",
-      "platform": "Reddit",
-      "community": "r/GamingLeaksAndRumours",
-      "title": "[RUMOR] New Ori game developed by Saber Interactive to be announced at either Gamescom or a Fall Xbox Developer_Direct",
-      "summary": "https://www.resetera.com/threads/xbox-game-studios-ot-38.1592677/post-159460228",
-      "publishedAt": "2026-08-23T00:38:33Z",
-      "category": "Игры",
-      "signal": "hot",
-      "engagementScore": 81.6,
-      "engagementBasis": "Позиция #3 среди Hot-постов r/GamingLeaksAndRumours; числовые апвоуты и комментарии RSS не раскрывает",
-      "metrics": {},
-      "pollQuestion": "[RUMOR] New Ori game developed by Saber Interactive to be announced at either Gamescom or a Fall Xbox Developer_Direct — что вы думаете?",
-      "pollOptions": [
-        "Тема действительно цепляет",
-        "Интересно, но подожду отзывы",
-        "Не вижу в этом ничего нового",
-        "Хочу больше подтверждённых фактов"
-      ],
-      "sourceUrl": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1vvsrpt/rumor_new_ori_game_developed_by_saber_interactive/"
-    },
-    {
       "id": "45609673c84a6032",
       "platform": "Reddit",
       "community": "r/virtualreality",
@@ -284,7 +284,7 @@
       "publishedAt": "2026-08-23T00:33:08Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 81.5,
+      "engagementScore": 81.0,
       "engagementBasis": "Позиция #3 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Virtua Cop 2 in VR is amazing! — что вы думаете?",
@@ -297,25 +297,25 @@
       "sourceUrl": "https://www.reddit.com/r/virtualreality/comments/1vvsniu/virtua_cop_2_in_vr_is_amazing/"
     },
     {
-      "id": "97e2ea3454fa565b",
+      "id": "77f1490ddb72aa38",
       "platform": "Reddit",
-      "community": "r/GamingLeaksAndRumours",
-      "title": "GTA 6 Leak #8 - Strip Club",
-      "summary": "HDR (slow link): https://files.catbox.moe/2tj79o.mp4 Alternative: https://streamable.com/rrjpml?src=player-page-share",
-      "publishedAt": "2026-08-22T19:03:47Z",
-      "category": "Игры / слухи",
+      "community": "r/Games",
+      "title": "New Studio From Arkane Austin Devs Promises They Won’t Commit Another Redfall",
+      "summary": "",
+      "publishedAt": "2026-08-23T00:21:06Z",
+      "category": "Игры",
       "signal": "hot",
-      "engagementScore": 80.8,
-      "engagementBasis": "Позиция #1 среди Hot-постов r/GamingLeaksAndRumours; числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 80.7,
+      "engagementBasis": "Позиция #3 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
-      "pollQuestion": "GTA 6 Leak #8 - Strip Club — что вы думаете?",
+      "pollQuestion": "New Studio From Arkane Austin Devs Promises They Won’t Commit Another Redfall — что вы думаете?",
       "pollOptions": [
         "Тема действительно цепляет",
         "Интересно, но подожду отзывы",
         "Не вижу в этом ничего нового",
         "Хочу больше подтверждённых фактов"
       ],
-      "sourceUrl": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1vvkvwb/gta_6_leak_8_strip_club/"
+      "sourceUrl": "https://www.reddit.com/r/Games/comments/1vvse63/new_studio_from_arkane_austin_devs_promises_they/"
     },
     {
       "id": "2c43bca750638a4f",
@@ -326,7 +326,7 @@
       "publishedAt": "2026-08-23T09:12:17Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 80.7,
+      "engagementScore": 80.3,
       "engagementBasis": "Позиция #6 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Playing Half Life 2 VR natively on Quest 3 will never get old, these classic experiences are the reason I love Standalone VR (especially when accompanied by certain plants... 👀❤️) — что вы думаете?",
@@ -339,46 +339,46 @@
       "sourceUrl": "https://www.reddit.com/r/virtualreality/comments/1vw2bvx/playing_half_life_2_vr_natively_on_quest_3_will/"
     },
     {
-      "id": "6c37727f95d16a87",
+      "id": "28e7da9d70bd4b97",
       "platform": "Reddit",
-      "community": "r/OculusQuest",
-      "title": "The Holy Trinity",
+      "community": "r/Games",
+      "title": "Final Fantasy XII CO OP Mod Trailer Ivalice Together",
       "summary": "",
-      "publishedAt": "2026-08-22T21:14:43Z",
-      "category": "VR / Quest",
-      "signal": "hot",
-      "engagementScore": 80.5,
-      "engagementBasis": "Позиция #2 среди Hot-постов r/OculusQuest; числовые апвоуты и комментарии RSS не раскрывает",
-      "metrics": {},
-      "pollQuestion": "The Holy Trinity — что вы думаете?",
-      "pollOptions": [
-        "Хочу попробовать",
-        "Интересно, но нужны тесты",
-        "Подожду развития технологии",
-        "Мне это не нужно"
-      ],
-      "sourceUrl": "https://www.reddit.com/r/OculusQuest/comments/1vvo5z0/the_holy_trinity/"
-    },
-    {
-      "id": "92f0855bb2eeab72",
-      "platform": "Reddit",
-      "community": "r/GamingLeaksAndRumours",
-      "title": "NateTheHate: A new Ori is what I was referring to. I do not have confirmation on if it will be at Gamescom yet.",
-      "summary": "https://www.resetera.com/threads/xbox-game-studios-ot-38.1592677/post-159474757",
-      "publishedAt": "2026-08-23T05:33:55Z",
+      "publishedAt": "2026-08-22T21:23:56Z",
       "category": "Игры",
       "signal": "hot",
-      "engagementScore": 80.4,
-      "engagementBasis": "Позиция #5 среди Hot-постов r/GamingLeaksAndRumours; числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 80.2,
+      "engagementBasis": "Позиция #2 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
-      "pollQuestion": "NateTheHate: A new Ori is what I was referring to. I do not have confirmation on if it will be at Gamescom yet. — что вы думаете?",
+      "pollQuestion": "Final Fantasy XII CO OP Mod Trailer Ivalice Together — что вы думаете?",
+      "pollOptions": [
+        "Хочу пережить любимую игру заново",
+        "Открою пропущенную классику",
+        "Интересны оба варианта",
+        "Не связываюсь с VR-модами"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/Games/comments/1vvodxg/final_fantasy_xii_co_op_mod_trailer_ivalice/"
+    },
+    {
+      "id": "97e2ea3454fa565b",
+      "platform": "Reddit",
+      "community": "r/GamingLeaksAndRumours",
+      "title": "GTA 6 Leak #8 - Strip Club",
+      "summary": "HDR (slow link): https://files.catbox.moe/2tj79o.mp4 Alternative: https://streamable.com/rrjpml?src=player-page-share",
+      "publishedAt": "2026-08-22T19:03:47Z",
+      "category": "Игры / слухи",
+      "signal": "hot",
+      "engagementScore": 80.2,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/GamingLeaksAndRumours; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "GTA 6 Leak #8 - Strip Club — что вы думаете?",
       "pollOptions": [
         "Тема действительно цепляет",
         "Интересно, но подожду отзывы",
         "Не вижу в этом ничего нового",
         "Хочу больше подтверждённых фактов"
       ],
-      "sourceUrl": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1vvyjc5/natethehate_a_new_ori_is_what_i_was_referring_to/"
+      "sourceUrl": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1vvkvwb/gta_6_leak_8_strip_club/"
     }
   ],
   "sourceStatus": {
@@ -394,6 +394,10 @@
     "threads": {
       "status": "disabled: THREADS_ACCESS_TOKEN is not configured",
       "items": 0
+    },
+    "llm": {
+      "status": "disabled: OPENAI_API_KEY is not configured",
+      "model": "gpt-5-mini"
     }
   }
 }
