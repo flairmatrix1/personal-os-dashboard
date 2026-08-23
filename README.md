@@ -23,7 +23,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 ## Автоматическое обновление новостей
 
-Workflow `.github/workflows/update-news.yml` запускается каждый час и собирает
+Workflow `.github/workflows/update-news.yml` запускается каждые 15 минут и собирает
 свежие материалы из RSS-лент, перечисленных в `news-sources.json`. Скрипт
 `scripts/update_news.py` оставляет публикации не старше семи дней, удаляет
 дубли, сортирует их по дате и обновляет `news.json`. Если все источники
