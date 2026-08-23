@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-23T09:58:59Z",
-  "methodNote": "Reddit-карточки отобраны из свежей объединённой Hot-ленты 10 тематических сообществ; позиция Hot — сигнал заметности, а не полный рейтинг платформы. Публичный веб-скан X и Threads не дал постов, которые удалось бы проверить без авторизации, поэтому сигналы этих платформ не добавлены.",
+  "updatedAt": "2026-08-23T10:36:31+00:00",
+  "methodNote": "Reddit оценивается по позиции в Hot; X — по публичным метрикам; Threads — по TOP-поиску. Это сигналы обсуждаемости, не исследование всей аудитории.",
   "items": [
     {
       "id": "9d5475576a949bfc",
@@ -11,8 +11,8 @@
       "publishedAt": "2026-08-23T09:48:37Z",
       "category": "VR / PC VR",
       "signal": "hot",
-      "engagementScore": 100.8,
-      "engagementBasis": "Позиция #1 в доступной Hot-выборке r/ValveIndex; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 99.9,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/ValveIndex; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Как бы вы поступили с разболтавшимся стиком контроллера Index?",
       "pollOptions": [
@@ -33,8 +33,8 @@
       "publishedAt": "2026-08-23T09:03:27Z",
       "category": "Игры",
       "signal": "hot",
-      "engagementScore": 99.7,
-      "engagementBasis": "Позиция #1 в доступной Hot-выборке r/Games; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 98.8,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Какое наследие Valve для вас важнее всего?",
       "pollOptions": [
@@ -47,6 +47,27 @@
       "editorialMode": "hermes"
     },
     {
+      "id": "e3b69c7c992c6e65",
+      "platform": "Reddit",
+      "community": "r/pcgaming",
+      "title": "PC game discounts for the weekend",
+      "summary": "",
+      "publishedAt": "2026-08-23T10:09:56Z",
+      "category": "Игры",
+      "signal": "hot",
+      "engagementScore": 96.4,
+      "engagementBasis": "Позиция #2 среди Hot-постов r/pcgaming; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "PC game discounts for the weekend — что вы думаете?",
+      "pollOptions": [
+        "Тема действительно цепляет",
+        "Интересно, но подожду отзывы",
+        "Не вижу в этом ничего нового",
+        "Хочу больше подтверждённых фактов"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/pcgaming/comments/1vw3b7k/pc_game_discounts_for_the_weekend/"
+    },
+    {
       "id": "18688520a2cf3d08",
       "platform": "Reddit",
       "community": "r/buildapc",
@@ -55,8 +76,8 @@
       "publishedAt": "2026-08-23T06:17:44Z",
       "category": "Компьютеры",
       "signal": "hot",
-      "engagementScore": 92.0,
-      "engagementBasis": "Позиция #2 в доступной Hot-выборке r/buildapc; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 91.2,
+      "engagementBasis": "Позиция #2 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Что выбрать за примерно 1000 AUD в этой конфигурации?",
       "pollOptions": [
@@ -69,6 +90,27 @@
       "editorialMode": "hermes"
     },
     {
+      "id": "086973da5375ce61",
+      "platform": "Reddit",
+      "community": "r/pcgaming",
+      "title": "Valve is now 30 years old.",
+      "summary": "Valve was officially founded on August 24 1996 by Gabe Newell and Mike Harrington. In 1998 they released Half-Life, which was revolutionary for the FPS genre. noclip produced a great documentary for its 20th Anniversary that I highly recommend. Valve then kept working on some things, which also included hiring the crea",
+      "publishedAt": "2026-08-23T09:03:18Z",
+      "category": "Игры / PC",
+      "signal": "hot",
+      "engagementScore": 91.0,
+      "engagementBasis": "Позиция #3 среди Hot-постов r/pcgaming; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "Valve is now 30 years old. — что вы думаете?",
+      "pollOptions": [
+        "Тема действительно цепляет",
+        "Интересно, но подожду отзывы",
+        "Не вижу в этом ничего нового",
+        "Хочу больше подтверждённых фактов"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/pcgaming/comments/1vw26cg/valve_is_now_30_years_old/"
+    },
+    {
       "id": "bafb176bd8b68c95",
       "platform": "Reddit",
       "community": "r/hardware",
@@ -77,8 +119,8 @@
       "publishedAt": "2026-08-23T02:27:38Z",
       "category": "Компьютеры",
       "signal": "hot",
-      "engagementScore": 90.5,
-      "engagementBasis": "Позиция #1 в доступной Hot-выборке r/hardware; выборка неполная, доступный RSS содержит только заголовок без числовых метрик",
+      "engagementScore": 89.6,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/hardware; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Что в возможном совместном TPU-проекте Google и AMD наиболее существенно?",
       "pollOptions": [
@@ -99,8 +141,8 @@
       "publishedAt": "2026-08-23T05:03:28Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 90.4,
-      "engagementBasis": "Позиция #2 в доступной Hot-выборке r/virtualreality; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 89.5,
+      "engagementBasis": "Позиция #2 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Что важнее всего для VR-мода System Shock 2?",
       "pollOptions": [
@@ -113,16 +155,58 @@
       "editorialMode": "hermes"
     },
     {
+      "id": "59887cac71ee13b3",
+      "platform": "Reddit",
+      "community": "r/buildapc",
+      "title": "64gb Ddr5 Ram under 700$",
+      "summary": "So now im in the hardest phase of Building a pc choosing the ram bcuz ill pick a high end am5 cpu ill need ddr5 ram normally 32 gigs would be more than enough BUT id like to get more than that for what I'm doing (it is not NECESSARLY NECESSARY) but more importantly to get it before ram prices maybe go up now i need 64",
+      "publishedAt": "2026-08-23T09:52:49Z",
+      "category": "Компьютеры",
+      "signal": "hot",
+      "engagementScore": 88.1,
+      "engagementBasis": "Позиция #4 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "64gb Ddr5 Ram under 700$ — что вы думаете?",
+      "pollOptions": [
+        "Цена и производительность решают",
+        "Обновил(а) бы сейчас",
+        "Подожду новое поколение",
+        "Мне хватает текущего ПК"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/buildapc/comments/1vw30qn/64gb_ddr5_ram_under_700/"
+    },
+    {
+      "id": "2c43bca750638a4f",
+      "platform": "Reddit",
+      "community": "r/virtualreality",
+      "title": "Playing Half Life 2 VR natively on Quest 3 will never get old, these classic experiences are the reason I love Standalone VR (especially when accompanied by certain plants... 👀❤️)",
+      "summary": "Around an hour of gameplay showing performance (Rather a lot of adult language in this video just to warn people) Installed on my Quest 3 around 2 days ago after seeing GamertagVR's video and I've been having a blast! *Gamertag VR's Video* https://youtu.be/tcQSERkwRYQ?is=qkAvuqfBwIEOcT_z Medium/low mix of settings with",
+      "publishedAt": "2026-08-23T09:12:17Z",
+      "category": "VR / XR",
+      "signal": "hot",
+      "engagementScore": 87.3,
+      "engagementBasis": "Позиция #4 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "Playing Half Life 2 VR natively on Quest 3 will never get old, these classic experiences are the reason I love Standalone VR (especially when accompanied by certain plants... 👀❤️) — что вы думаете?",
+      "pollOptions": [
+        "Хочу попробовать",
+        "Интересно, но нужны тесты",
+        "Подожду развития технологии",
+        "Мне это не нужно"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/virtualreality/comments/1vw2bvx/playing_half_life_2_vr_natively_on_quest_3_will/"
+    },
+    {
       "id": "92f0855bb2eeab72",
       "platform": "Reddit",
       "community": "r/GamingLeaksAndRumours",
       "title": "NateTheHate уточнил слух о новой Ori",
       "summary": "NateTheHate заявил, что ранее имел в виду новую игру Ori. При этом он не подтвердил, появится ли она на Gamescom.",
       "publishedAt": "2026-08-23T05:33:55Z",
-      "category": "Игры / слухи",
+      "category": "Игры",
       "signal": "hot",
-      "engagementScore": 87.3,
-      "engagementBasis": "Позиция #3 в доступной Hot-выборке r/GamingLeaksAndRumours; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 86.5,
+      "engagementBasis": "Позиция #3 среди Hot-постов r/GamingLeaksAndRumours; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Как вы оцениваете сообщение о возможной новой Ori без подтверждения Gamescom?",
       "pollOptions": [
@@ -135,16 +219,37 @@
       "editorialMode": "hermes"
     },
     {
+      "id": "6eda03eab74a7f41",
+      "platform": "Reddit",
+      "community": "r/virtualreality",
+      "title": "GTA SA VR newest gameplay created by the same guy who made the new Vice City VR mod",
+      "summary": "",
+      "publishedAt": "2026-08-22T22:57:33Z",
+      "category": "VR / XR",
+      "signal": "hot",
+      "engagementScore": 84.7,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "GTA SA VR newest gameplay created by the same guy who made the new Vice City VR mod — что вы думаете?",
+      "pollOptions": [
+        "Хочу пережить любимую игру заново",
+        "Открою пропущенную классику",
+        "Интересны оба варианта",
+        "Не связываюсь с VR-модами"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/virtualreality/comments/1vvqiyc/gta_sa_vr_newest_gameplay_created_by_the_same_guy/"
+    },
+    {
       "id": "5b062e54f6445e0a",
       "platform": "Reddit",
       "community": "r/OculusQuest",
       "title": "Quest 1 сохранился на стартовой версии прошивки",
       "summary": "Публикация посвящена гарнитуре Quest 1, которая осталась на прошивке времён запуска. Дополнительного описания в доступной RSS-записи нет.",
       "publishedAt": "2026-08-23T03:45:01Z",
-      "category": "VR / Quest",
+      "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 85.0,
-      "engagementBasis": "Позиция #3 в доступной Hot-выборке r/OculusQuest; выборка неполная, доступный RSS содержит только заголовок без числовых метрик",
+      "engagementScore": 84.1,
+      "engagementBasis": "Позиция #3 среди Hot-постов r/OculusQuest; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Что делать с Quest 1 на оригинальной прошивке?",
       "pollOptions": [
@@ -165,8 +270,8 @@
       "publishedAt": "2026-08-22T21:52:12Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 84.0,
-      "engagementBasis": "Позиция #1 в доступной Hot-выборке r/OculusQuest; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 83.1,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/OculusQuest; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Какой режим лучше всего раскрыл бы VR-фотоигру на Gaussian splatting?",
       "pollOptions": [
@@ -179,6 +284,48 @@
       "editorialMode": "hermes"
     },
     {
+      "id": "d1e0f1a63998cb7d",
+      "platform": "Reddit",
+      "community": "r/buildapc",
+      "title": "Should I change thermal paste of my 1070 after 8 years?",
+      "summary": "A guy from work is building a PC for his girlfriend and said he would be willing to buy my old MSI Armor 1070 Ti. Card works, run a couple benchmarks only thing I want to do is open it to clean it up a little should I change the thermal paste while I'm at it? Not sure how often you should change it but I assume that af",
+      "publishedAt": "2026-08-23T08:18:14Z",
+      "category": "Компьютеры",
+      "signal": "hot",
+      "engagementScore": 82.3,
+      "engagementBasis": "Позиция #5 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "Should I change thermal paste of my 1070 after 8 years? — что вы думаете?",
+      "pollOptions": [
+        "Да, стоит сделать",
+        "Только если уже есть проблемы",
+        "Нет, пока всё работает",
+        "Лучше доверить специалисту"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/buildapc/comments/1vw1el8/should_i_change_thermal_paste_of_my_1070_after_8/"
+    },
+    {
+      "id": "4812e2e74e0e56b9",
+      "platform": "Reddit",
+      "community": "r/buildapc",
+      "title": "Upgrading from a GTX 660 ($350-$380 used budget): Stuck between RTX 3080, RTX 5060, or Intel Arc B580?",
+      "summary": "Hey guys, I'm finally upgrading from my ancient GTX 660 and looking at the used market since my budget is locked at $350-$380. My main uses will be video editing (Premiere/Resolve), 1080p/1440p gaming, and overall smooth daily PC performance. Right now, I'm stuck between three paths on the used market: RTX 3080 (10GB):",
+      "publishedAt": "2026-08-23T02:16:25Z",
+      "category": "Компьютеры",
+      "signal": "hot",
+      "engagementScore": 82.2,
+      "engagementBasis": "Позиция #3 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
+      "metrics": {},
+      "pollQuestion": "Upgrading from a GTX 660 ($350-$380 used budget): Stuck between RTX 3080, RTX 5060, or Intel Arc B580? — что вы думаете?",
+      "pollOptions": [
+        "Цена и производительность решают",
+        "Обновил(а) бы сейчас",
+        "Подожду новое поколение",
+        "Мне хватает текущего ПК"
+      ],
+      "sourceUrl": "https://www.reddit.com/r/buildapc/comments/1vvursa/upgrading_from_a_gtx_660_350380_used_budget_stuck/"
+    },
+    {
       "id": "9f9d2c9a8cacaa33",
       "platform": "Reddit",
       "community": "r/augmentedreality",
@@ -187,8 +334,8 @@
       "publishedAt": "2026-08-22T21:06:01Z",
       "category": "AR / MR",
       "signal": "hot",
-      "engagementScore": 82.9,
-      "engagementBasis": "Позиция #1 в доступной Hot-выборке r/augmentedreality; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 82.1,
+      "engagementBasis": "Позиция #1 среди Hot-постов r/augmentedreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Где механика «миниатюрного мира на ладони» была бы полезнее всего?",
       "pollOptions": [
@@ -209,8 +356,8 @@
       "publishedAt": "2026-08-23T00:33:08Z",
       "category": "VR / XR",
       "signal": "hot",
-      "engagementScore": 80.8,
-      "engagementBasis": "Позиция #3 в доступной Hot-выборке r/virtualreality; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 80.0,
+      "engagementBasis": "Позиция #3 среди Hot-постов r/virtualreality; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Какую аркадную серию Sega вы первой адаптировали бы для VR?",
       "pollOptions": [
@@ -223,28 +370,6 @@
       "editorialMode": "hermes"
     },
     {
-      "id": "28e7da9d70bd4b97",
-      "platform": "Reddit",
-      "community": "r/Games",
-      "title": "Ivalice Together добавляет кооператив в Final Fantasy XII",
-      "summary": "В публикации представлен трейлер кооперативного мода Ivalice Together для Final Fantasy XII. Дополнительного описания в доступной RSS-записи нет.",
-      "publishedAt": "2026-08-22T21:23:56Z",
-      "category": "Игры / моды",
-      "signal": "hot",
-      "engagementScore": 80.1,
-      "engagementBasis": "Позиция #2 в доступной Hot-выборке r/Games; выборка неполная, доступный RSS содержит только заголовок без числовых метрик",
-      "metrics": {},
-      "pollQuestion": "Какой формат кооператива лучше подходит Final Fantasy XII?",
-      "pollOptions": [
-        "Полное совместное прохождение сюжета",
-        "Совместные бои при одиночном исследовании",
-        "Отдельные кооперативные испытания",
-        "Игра должна оставаться одиночной"
-      ],
-      "sourceUrl": "https://www.reddit.com/r/Games/comments/1vvodxg/final_fantasy_xii_co_op_mod_trailer_ivalice/",
-      "editorialMode": "hermes"
-    },
-    {
       "id": "784e59890adfd23b",
       "platform": "Reddit",
       "community": "r/buildapc",
@@ -253,8 +378,8 @@
       "publishedAt": "2026-08-23T09:38:50Z",
       "category": "Компьютеры",
       "signal": "hot",
-      "engagementScore": 84.6,
-      "engagementBasis": "Позиция #5 в доступной Hot-выборке r/buildapc; выборка неполная, числовые апвоуты и комментарии RSS не раскрывает",
+      "engagementScore": 79.9,
+      "engagementBasis": "Позиция #6 среди Hot-постов r/buildapc; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Какая проверка подержанной видеокарты перед покупкой обязательна?",
       "pollOptions": [
@@ -271,23 +396,19 @@
     "reddit": {
       "status": "ok",
       "items": 100,
-      "published": 12,
       "errors": []
     },
     "x": {
-      "status": "no verifiable public posts found",
-      "scan": "hermes web scan",
+      "status": "disabled: X_BEARER_TOKEN is not configured",
       "items": 0
     },
     "threads": {
-      "status": "no verifiable public posts found",
-      "scan": "hermes web scan",
+      "status": "disabled: THREADS_ACCESS_TOKEN is not configured",
       "items": 0
     },
     "llm": {
-      "status": "hermes editorial pass",
-      "editorialMode": "hermes",
-      "items": 12
+      "status": "disabled: OPENAI_API_KEY is not configured",
+      "model": "gpt-5-mini"
     }
   }
 }
