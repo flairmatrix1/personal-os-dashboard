@@ -1,0 +1,24 @@
+{
+  "maxItems": 18,
+  "maxAgeDays": 3,
+  "reddit": [
+    {"community": "virtualreality", "category": "VR / XR"},
+    {"community": "OculusQuest", "category": "VR / Quest"},
+    {"community": "ValveIndex", "category": "VR / PC VR"},
+    {"community": "PSVR", "category": "VR / PlayStation"},
+    {"community": "augmentedreality", "category": "AR / MR"},
+    {"community": "hardware", "category": "Компьютеры"},
+    {"community": "buildapc", "category": "Компьютеры"},
+    {"community": "pcgaming", "category": "Игры / PC"},
+    {"community": "Games", "category": "Игры"},
+    {"community": "GamingLeaksAndRumours", "category": "Игры / слухи"}
+  ],
+  "x": {
+    "query": "(VR OR XR OR AR OR MR OR headset OR GPU OR PCgaming OR gaming) -is:retweet lang:en",
+    "maxResults": 50
+  },
+  "threads": {
+    "keywords": ["virtual reality", "mixed reality", "augmented reality", "VR gaming", "PC gaming", "GPU"],
+    "resultsPerKeyword": 25
+  }
+}

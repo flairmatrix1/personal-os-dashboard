@@ -11,10 +11,13 @@ class DashboardContractTests(unittest.TestCase):
             "index.html",
             "ideas.json",
             "news.json",
+            "community.json",
             "channel.json",
             "links.json",
             "news-sources.json",
+            "community-sources.json",
             "scripts/update_news.py",
+            "scripts/update_community.py",
             ".github/workflows/update-news.yml",
             "README.md",
         ):
@@ -23,10 +26,12 @@ class DashboardContractTests(unittest.TestCase):
     def test_json_files_have_expected_shapes(self):
         ideas = json.loads((ROOT / "ideas.json").read_text(encoding="utf-8"))
         news = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+        community = json.loads((ROOT / "community.json").read_text(encoding="utf-8"))
         channel = json.loads((ROOT / "channel.json").read_text(encoding="utf-8"))
         links = json.loads((ROOT / "links.json").read_text(encoding="utf-8"))
         self.assertIsInstance(ideas["items"], list)
         self.assertIsInstance(news["items"], list)
+        self.assertIsInstance(community["items"], list)
         self.assertIsInstance(channel["topContent"], list)
         self.assertIsInstance(links["groups"], list)
 
@@ -38,6 +43,7 @@ class DashboardContractTests(unittest.TestCase):
             "America/Los_Angeles",
             "ideas.json",
             "news.json",
+            "community.json",
             "channel.json",
             "links.json",
             "navigator.clipboard",
@@ -63,6 +69,17 @@ class DashboardContractTests(unittest.TestCase):
         workflow = (ROOT / ".github/workflows/update-news.yml").read_text(encoding="utf-8")
         self.assertIn("schedule:", workflow)
         self.assertIn("scripts/update_news.py", workflow)
+        self.assertIn("scripts/update_community.py", workflow)
+
+    def test_community_signal_contract(self):
+        community = json.loads((ROOT / "community.json").read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(community["items"]), 5)
+        for item in community["items"]:
+            self.assertIn(item["platform"], {"Reddit", "X", "Threads"})
+            self.assertTrue(item["sourceUrl"].startswith("https://"))
+            self.assertIsInstance(item["pollOptions"], list)
+            self.assertGreaterEqual(len(item["pollOptions"]), 3)
+            self.assertTrue(item["engagementBasis"])
 
     def test_no_secret_placeholders(self):
         combined = "\n".join(

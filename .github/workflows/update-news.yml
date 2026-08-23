@@ -1,4 +1,4 @@
-name: Update XR news
+name: Update news and community pulse
 
 on:
   workflow_dispatch:
@@ -22,16 +22,21 @@ jobs:
           python-version: "3.12"
       - name: Fetch current XR news
         run: python scripts/update_news.py
+      - name: Fetch public community discussions
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: python scripts/update_community.py
       - name: Validate dashboard
         run: python -m unittest -v
       - name: Commit changes
         run: |
-          if git diff --quiet -- news.json; then
-            echo "No news changes"
+          if git diff --quiet -- news.json community.json; then
+            echo "No data changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add news.json
-          git commit -m "chore: refresh XR news"
+          git add news.json community.json
+          git commit -m "chore: refresh news and community pulse"
           git push

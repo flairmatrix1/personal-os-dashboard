@@ -17,6 +17,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 - `ideas.json` — идеи видео и постов Portal News.
 - `news.json` — проверенные горячие сигналы.
+- `community.json` — популярные пользовательские обсуждения и идеи опросов.
 - `channel.json` — реальные результаты опубликованного контента.
 - `links.json` — безопасные рабочие ссылки.
 
@@ -31,10 +32,28 @@ Workflow `.github/workflows/update-news.yml` запускается каждый
 Открытая вкладка дашборда перечитывает данные раз в 10 минут и при возврате
 фокуса в окно. Workflow также можно запустить вручную на вкладке Actions.
 
+### Живые обсуждения
+
+`scripts/update_community.py` формирует отдельный файл `community.json` для
+блока «Что обсуждают». Без ключей он читает объединённую Reddit Hot RSS-ленту
+сообществ о VR, AR, компьютерах и играх. Индекс Reddit основан на позиции в
+Hot и свежести: публичный RSS не раскрывает точные апвоуты и комментарии.
+
+Поддержка X и Threads предусмотрена, но включается только официальными
+API-токенами в GitHub Secrets:
+
+- `X_BEARER_TOKEN` — X Recent Search с публичными метриками лайков, репостов и ответов;
+- `THREADS_ACCESS_TOKEN` — Threads Keyword Search с разрешениями
+  `threads_basic` и `threads_keyword_search`.
+
+Если секреты не добавлены, эти платформы явно отмечаются в `community.json`
+как `disabled`; Reddit продолжает обновляться независимо.
+
 Локальная проверка:
 
 ```bash
 python3 scripts/update_news.py
+python3 scripts/update_community.py
 python3 -m unittest -v
 ```
 

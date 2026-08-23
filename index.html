@@ -126,6 +126,9 @@
     .status.evergreen { color: var(--evergreen); }
     .signal h3 { margin: 0; font-size: 15px; line-height: 1.3; }
     .signal p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+    .community-note { padding: 11px 18px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.4; }
+    .engagement { color: var(--muted); font: 10px/1.35 var(--mono); }
+    .poll-options { margin: 0; padding-left: 18px; color: var(--muted); font-size: 12px; line-height: 1.45; }
 
     .capture { padding: 16px 18px 18px; }
     .capture textarea { width: 100%; min-height: 93px; resize: vertical; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); padding: 11px 12px; }
@@ -209,6 +212,12 @@
       </div>
 
       <aside class="column">
+        <section class="panel">
+          <div class="panel-head"><h2>Что обсуждают</h2><small id="communityUpdated">—</small></div>
+          <div class="community-note" id="communityNote">Reddit, X и Threads · сигналы живых обсуждений</div>
+          <div id="communitySignals"><div class="empty">Загружаю обсуждения…</div></div>
+        </section>
+
         <section class="panel">
           <div class="panel-head"><h2>Горячие сигналы</h2><small id="newsUpdated">—</small></div>
           <div id="signals"><div class="empty">Загружаю новости…</div></div>
@@ -344,6 +353,50 @@
       });
     }
 
+    function communityCopyText(item) {
+      const parts = [
+        `Опрос: «${item.pollQuestion || item.title}»`,
+        item.summary,
+        Array.isArray(item.pollOptions) && item.pollOptions.length ? `Варианты:\n— ${item.pollOptions.join("\n— ")}` : "",
+        item.engagementBasis && `Почему заметно: ${item.engagementBasis}`,
+        "Оговорка: это живое пользовательское обсуждение, а не исследование всей аудитории.",
+        item.sourceUrl && `Источник: ${item.sourceUrl}`,
+      ];
+      return parts.filter(Boolean).join("\n\n");
+    }
+
+    function renderCommunity(data) {
+      const node = $("#communitySignals");
+      const items = data.items || [];
+      if (!items.length) {
+        node.innerHTML = '<div class="empty">Пока нет доступных пользовательских обсуждений.</div>';
+        return;
+      }
+      $("#communityNote").textContent = data.methodNote || "Сигналы живых обсуждений";
+      node.innerHTML = items.slice(0, 8).map(item => {
+        const status = safe(item.signal || "watch").toLowerCase();
+        return `<article class="signal">
+          <div class="signal-top">
+            <span class="status ${escapeHtml(status)}">${escapeHtml(status.toUpperCase())}</span>
+            <span class="chip">${escapeHtml(item.platform || "Соцсеть")} · ${escapeHtml(item.community || "")}</span>
+          </div>
+          <h3>${escapeHtml(item.title)}</h3>
+          ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+          <div class="meta"><span class="chip">${escapeHtml(item.category || "Технологии")}</span><span class="chip">индекс ${escapeHtml(item.engagementScore || 0)}</span></div>
+          <div class="engagement">${escapeHtml(item.engagementBasis || "")}</div>
+          ${Array.isArray(item.pollOptions) ? `<p><strong>Опрос:</strong> ${escapeHtml(item.pollQuestion || item.title)}</p><ul class="poll-options">${item.pollOptions.map(option => `<li>${escapeHtml(option)}</li>`).join("")}</ul>` : ""}
+          <div class="actions">
+            <a class="action" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Источник</a>
+            <button class="action primary" type="button" data-community-copy="${escapeHtml(item.id)}">В идею</button>
+          </div>
+        </article>`;
+      }).join("");
+      node.querySelectorAll("[data-community-copy]").forEach(button => {
+        const item = items.find(candidate => candidate.id === button.dataset.communityCopy);
+        button.addEventListener("click", () => copyText(communityCopyText(item)));
+      });
+    }
+
     function renderTopContent(items) {
       const node = $("#topContent");
       if (!items.length) {
@@ -369,8 +422,8 @@
     }
 
     async function loadDashboard() {
-      const jobs = await Promise.allSettled([loadJson("ideas.json"), loadJson("news.json"), loadJson("channel.json"), loadJson("links.json")]);
-      const [ideasResult, newsResult, channelResult, linksResult] = jobs;
+      const jobs = await Promise.allSettled([loadJson("ideas.json"), loadJson("news.json"), loadJson("community.json"), loadJson("channel.json"), loadJson("links.json")]);
+      const [ideasResult, newsResult, communityResult, channelResult, linksResult] = jobs;
       if (ideasResult.status === "fulfilled") {
         const data = ideasResult.value;
         renderIdeas("#videoIdeas", (data.items || []).filter(item => item.type === "video"), "Добавьте идеи для видео в ideas.json.");
@@ -384,6 +437,10 @@
         renderSignals(newsResult.value.items || []);
         $("#newsUpdated").textContent = formatUpdated(newsResult.value.updatedAt);
       } else renderSignals([]);
+      if (communityResult.status === "fulfilled") {
+        renderCommunity(communityResult.value);
+        $("#communityUpdated").textContent = formatUpdated(communityResult.value.updatedAt);
+      } else renderCommunity({items: []});
       if (channelResult.status === "fulfilled") {
         renderTopContent(channelResult.value.topContent || []);
         $("#channelUpdated").textContent = formatUpdated(channelResult.value.updatedAt);
