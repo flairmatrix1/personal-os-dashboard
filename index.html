@@ -418,6 +418,9 @@
     tick();
     setInterval(tick, 30000);
     loadDashboard();
+    // GitHub Actions refreshes news.json hourly. Keep an open dashboard fresh too.
+    setInterval(loadDashboard, 10 * 60 * 1000);
+    window.addEventListener("focus", loadDashboard);
   </script>
 </body>
 </html>

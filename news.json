@@ -1,60 +1,144 @@
 {
-  "updatedAt": "2026-08-23T14:24:03+08:00",
+  "updatedAt": "2026-08-23T08:56:09+00:00",
   "items": [
     {
-      "id": "apple-vision-jobs-2026-08-21",
-      "title": "Apple reportedly cuts jobs across Siri and Vision Pro teams",
-      "source": "TechCrunch / Bloomberg",
-      "publishedAt": "2026-08-21T20:58:07Z",
-      "category": "Spatial computing",
-      "signal": "hot",
-      "reason": "Крупное изменение внутри одного из главных игроков XR; Apple подтвердила, что часть ролей затронута",
-      "contentAngle": "Разобрать, означает ли это отказ от Vision Pro или перераспределение ресурсов в сторону более лёгких устройств",
-      "sourceUrl": "https://techcrunch.com/2026/08/21/apple-is-reportedly-cutting-hundreds-of-jobs-from-siri-vision-pro-teams/"
-    },
-    {
-      "id": "pico-space-pro-2026-08-19",
-      "title": "Pico names its Vision Pro competitor Pico Space Pro and schedules its debut",
-      "source": "Road to VR",
-      "publishedAt": "2026-08-19T19:06:50Z",
-      "category": "MR",
+      "id": "0576c19af5eb9a01",
+      "title": "Co-op Space Roguelike Sol Protocol Sets September Release Date On Quest 3",
+      "source": "UploadVR",
+      "publishedAt": "2026-08-21T19:00:03Z",
+      "category": "Meta Quest",
       "signal": "rising",
-      "reason": "Официальное название и ближайшая презентация создают новый конкурентный сюжет",
-      "contentAngle": "Отделить подтверждённые сведения о Pico Space Pro от предположений о характеристиках Project Swan",
-      "sourceUrl": "https://roadtovr.com/picos-vision-pro-competitor-release-date-pricr-name/"
+      "reason": "Свежая публикация профильного источника UploadVR",
+      "contentAngle": "Объяснить, что новость меняет для владельцев Quest и экосистемы Meta",
+      "sourceUrl": "https://www.uploadvr.com/co-op-sol-protocol-sets-release-date-for-meta-quest"
     },
     {
-      "id": "xreal-aura-reservations-2026-08-20",
-      "title": "XREAL says AURA passed 10,000 reservations before launch",
-      "source": "Road to VR / XREAL announcement",
-      "publishedAt": "2026-08-20T13:00:00Z",
-      "category": "AR / Android XR",
+      "id": "403399f8c56019ec",
+      "title": "AI/XR Beats: Anthropic Revenue Surges, Snap Takes AR Long View",
+      "source": "AR Insider",
+      "publishedAt": "2026-08-21T06:29:50Z",
+      "category": "AR / smart glasses",
       "signal": "rising",
-      "reason": "Заявленный компанией ранний интерес к одному из первых заметных устройств на Android XR",
-      "contentAngle": "Объяснить разницу между резервациями и продажами и обсудить спрос на лёгкие AR-очки",
-      "sourceUrl": "https://roadtovr.com/first-android-ar-glasses-xreal-aura-10k-reservations/"
+      "reason": "Свежая публикация профильного источника AR Insider",
+      "contentAngle": "Коротко объяснить, что изменилось для рынка AR-очков и кому это важно",
+      "sourceUrl": "https://arinsider.co/2026/08/21/ai-xr-beats-anthropic-revenue-surges-snap-takes-ar-long-view"
     },
     {
-      "id": "supernatural-independent-2026-08-21",
-      "title": "Supernatural continues as an independent company after Meta ended development",
+      "id": "1892f8b231970147",
+      "title": "How Supernatural Got A Second Life Without Meta",
       "source": "UploadVR",
       "publishedAt": "2026-08-21T00:02:36Z",
-      "category": "VR industry",
+      "category": "XR industry",
       "signal": "rising",
-      "reason": "Необычный пример возвращения VR-продукта после закрытия команды внутри большой компании",
-      "contentAngle": "Показать, как устроена вторая жизнь Supernatural и что история говорит об экономике VR-фитнеса",
-      "sourceUrl": "https://www.uploadvr.com/how-supernatural-got-a-second-life-without-meta/"
+      "reason": "Свежая публикация профильного источника UploadVR",
+      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
+      "sourceUrl": "https://www.uploadvr.com/how-supernatural-got-a-second-life-without-meta"
     },
     {
-      "id": "into-radius-2-quest-2026-08-18",
-      "title": "Into the Radius 2 leaves Quest early access on August 27",
-      "source": "Road to VR / CM Games",
-      "publishedAt": "2026-08-18T16:24:58Z",
+      "id": "43ec114615c0465e",
+      "title": "Twilight's End, Demeo x DnD Battlemarked's Next DLC Campaign, Drops Next Month",
+      "source": "UploadVR",
+      "publishedAt": "2026-08-20T22:34:57Z",
+      "category": "XR industry",
+      "signal": "rising",
+      "reason": "Свежая публикация профильного источника UploadVR",
+      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
+      "sourceUrl": "https://www.uploadvr.com/twilights-end-demeo-x-dnd-battlemarkeds-next-dlc-campaign-drops-next-month"
+    },
+    {
+      "id": "bffa2688f4094f81",
+      "title": "Payday: Aces High Could Be The Next Go-To VR Shooter To Play With Friends",
+      "source": "UploadVR",
+      "publishedAt": "2026-08-20T17:04:40Z",
+      "category": "XR industry",
+      "signal": "rising",
+      "reason": "Свежая публикация профильного источника UploadVR",
+      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
+      "sourceUrl": "https://www.uploadvr.com/payday-aces-high-could-be-the-next-go-to-vr-shooter-to-play-with-friends"
+    },
+    {
+      "id": "79a7c431cef842ee",
+      "title": "Steam Frame Unboxing & Setup Videos Leak, Pointing to Imminent Launch",
+      "source": "Road to VR",
+      "publishedAt": "2026-08-20T14:23:48Z",
+      "category": "XR industry",
+      "signal": "rising",
+      "reason": "Свежая публикация профильного источника Road to VR",
+      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
+      "sourceUrl": "https://roadtovr.com/steam-frame-unboxing-setup-video-leak"
+    },
+    {
+      "id": "aaa89538933a18be",
+      "title": "XREAL AURA Surpasses 10,000 Unit Reservations Ahead of Launch This Fall",
+      "source": "Road to VR",
+      "publishedAt": "2026-08-20T13:00:00Z",
+      "category": "AR / smart glasses",
+      "signal": "rising",
+      "reason": "Свежая публикация профильного источника Road to VR",
+      "contentAngle": "Коротко объяснить, что изменилось для рынка AR-очков и кому это важно",
+      "sourceUrl": "https://roadtovr.com/first-android-ar-glasses-xreal-aura-10k-reservations"
+    },
+    {
+      "id": "74d67f9889be0df5",
+      "title": "Can Surgical Robotics Uplevel Training with XR?",
+      "source": "AR Insider",
+      "publishedAt": "2026-08-20T12:00:00Z",
+      "category": "XR industry",
+      "signal": "rising",
+      "reason": "Свежая публикация профильного источника AR Insider",
+      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
+      "sourceUrl": "https://arinsider.co/2026/08/20/can-surgical-robotics-uplevel-training-with-xr"
+    },
+    {
+      "id": "d8f997492f0cd089",
+      "title": "Co-op Horde FPS The Long Survival Launches On PlayStation VR2 Next Week",
+      "source": "UploadVR",
+      "publishedAt": "2026-08-19T20:43:16Z",
       "category": "VR games",
+      "signal": "rising",
+      "reason": "Свежая публикация профильного источника UploadVR",
+      "contentAngle": "Сделать короткую новость и спросить аудиторию, будет ли она играть",
+      "sourceUrl": "https://www.uploadvr.com/co-op-horde-fps-a-long-survive-launches-on-playstation-vr2-next-week"
+    },
+    {
+      "id": "2676c2ed36cb0dbb",
+      "title": "Pico’s Vision Pro Competitor Gets Official Name and Debut Date",
+      "source": "Road to VR",
+      "publishedAt": "2026-08-19T19:06:50Z",
+      "category": "MR hardware",
+      "signal": "rising",
+      "reason": "Свежая публикация профильного источника Road to VR",
+      "contentAngle": "Коротко разобрать устройство, подтверждённые характеристики и место на XR-рынке",
+      "sourceUrl": "https://roadtovr.com/picos-vision-pro-competitor-release-date-pricr-name"
+    },
+    {
+      "id": "7adbb96350f36abd",
+      "title": "How Much Do Consumers Fuel XR Spending Growth?",
+      "source": "AR Insider",
+      "publishedAt": "2026-08-19T12:00:00Z",
+      "category": "XR industry",
+      "signal": "rising",
+      "reason": "Свежая публикация профильного источника AR Insider",
+      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
+      "sourceUrl": "https://arinsider.co/2026/08/19/how-much-do-consumers-fuel-xr-spending-growth"
+    },
+    {
+      "id": "0571839c9e319c9c",
+      "title": "Co-op VR JRPG Knights Of Fiona To Launch \"Free-To-Start\" With Paid Story Pass",
+      "source": "UploadVR",
+      "publishedAt": "2026-08-18T23:56:41Z",
+      "category": "XR industry",
       "signal": "watch",
-      "reason": "Близкий релиз на Quest 3 и Quest 3S с кампанией и дополнительным контентом",
-      "contentAngle": "Сделать короткую новость и спросить аудиторию, ждёт ли она релиз или уже играла на PC VR",
-      "sourceUrl": "https://roadtovr.com/into-radius-2-quest-release-date/"
+      "reason": "Свежая публикация профильного источника UploadVR",
+      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
+      "sourceUrl": "https://www.uploadvr.com/co-op-vr-jrpg-knights-of-fiona-to-launch-free-to-start-with-paid-story-pass"
     }
-  ]
+  ],
+  "feedStatus": {
+    "successful": 3,
+    "failed": 1,
+    "errors": [
+      "MIXED: <urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+    ]
+  }
 }

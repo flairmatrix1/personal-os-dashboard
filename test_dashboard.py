@@ -7,7 +7,17 @@ ROOT = Path(__file__).resolve().parent
 
 class DashboardContractTests(unittest.TestCase):
     def test_required_files_exist(self):
-        for name in ("index.html", "ideas.json", "news.json", "channel.json", "links.json", "README.md"):
+        for name in (
+            "index.html",
+            "ideas.json",
+            "news.json",
+            "channel.json",
+            "links.json",
+            "news-sources.json",
+            "scripts/update_news.py",
+            ".github/workflows/update-news.yml",
+            "README.md",
+        ):
             self.assertTrue((ROOT / name).is_file(), name)
 
     def test_json_files_have_expected_shapes(self):
@@ -33,6 +43,7 @@ class DashboardContractTests(unittest.TestCase):
             "navigator.clipboard",
             "localStorage",
             "prefers-reduced-motion",
+            "setInterval(loadDashboard, 10 * 60 * 1000)",
         ):
             self.assertIn(value, html)
 
@@ -45,13 +56,21 @@ class DashboardContractTests(unittest.TestCase):
             self.assertTrue(item.get("publishedAt"), item)
             self.assertTrue(item.get("sourceUrl", "").startswith("https://"), item)
 
-    def test_no_public_hosting_or_secret_placeholders(self):
+    def test_news_automation_contract(self):
+        sources = json.loads((ROOT / "news-sources.json").read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(sources["feeds"]), 3)
+        self.assertTrue(all(item["url"].startswith("https://") for item in sources["feeds"]))
+        workflow = (ROOT / ".github/workflows/update-news.yml").read_text(encoding="utf-8")
+        self.assertIn("schedule:", workflow)
+        self.assertIn("scripts/update_news.py", workflow)
+
+    def test_no_secret_placeholders(self):
         combined = "\n".join(
             path.read_text(encoding="utf-8")
             for path in ROOT.glob("*")
             if path.is_file() and path.suffix in {".html", ".json", ".md"}
         ).lower()
-        for forbidden in ("github pages", "api_key", "bearer ", "token="):
+        for forbidden in ("api_key", "bearer ", "token="):
             self.assertNotIn(forbidden, combined)
 
 

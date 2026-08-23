@@ -1,0 +1,22 @@
+{
+  "feeds": [
+    {
+      "name": "UploadVR",
+      "url": "https://www.uploadvr.com/rss/"
+    },
+    {
+      "name": "Road to VR",
+      "url": "https://www.roadtovr.com/feed/"
+    },
+    {
+      "name": "MIXED",
+      "url": "https://mixed-news.com/en/feed/"
+    },
+    {
+      "name": "AR Insider",
+      "url": "https://arinsider.co/feed/"
+    }
+  ],
+  "maxItems": 12,
+  "maxAgeDays": 7
+}
