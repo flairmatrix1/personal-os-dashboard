@@ -1,6 +1,17 @@
 {
-  "updatedAt": "2026-08-23T08:56:09+00:00",
+  "updatedAt": "2026-08-23T09:19:37+00:00",
   "items": [
+    {
+      "id": "124bd158c1ab42eb",
+      "title": "OpenAI Just Unveiled a Powerful New Cyber AI, But You Probably Can’t Use It",
+      "source": "MIXED",
+      "publishedAt": "2026-08-22T19:15:07Z",
+      "category": "XR industry",
+      "signal": "hot",
+      "reason": "Свежая публикация профильного источника MIXED",
+      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
+      "sourceUrl": "https://mixed-news.com/en/openai-just-unveiled-a-powerful-new-cyber-ai-but-you-probably-cant-use-it"
+    },
     {
       "id": "0576c19af5eb9a01",
       "title": "Co-op Space Roguelike Sol Protocol Sets September Release Date On Quest 3",
@@ -121,24 +132,11 @@
       "reason": "Свежая публикация профильного источника AR Insider",
       "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
       "sourceUrl": "https://arinsider.co/2026/08/19/how-much-do-consumers-fuel-xr-spending-growth"
-    },
-    {
-      "id": "0571839c9e319c9c",
-      "title": "Co-op VR JRPG Knights Of Fiona To Launch \"Free-To-Start\" With Paid Story Pass",
-      "source": "UploadVR",
-      "publishedAt": "2026-08-18T23:56:41Z",
-      "category": "XR industry",
-      "signal": "watch",
-      "reason": "Свежая публикация профильного источника UploadVR",
-      "contentAngle": "Выделить подтверждённые факты и объяснить, почему это важно для XR-рынка",
-      "sourceUrl": "https://www.uploadvr.com/co-op-vr-jrpg-knights-of-fiona-to-launch-free-to-start-with-paid-story-pass"
     }
   ],
   "feedStatus": {
-    "successful": 3,
-    "failed": 1,
-    "errors": [
-      "MIXED: <urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
-    ]
+    "successful": 4,
+    "failed": 0,
+    "errors": []
   }
 }
