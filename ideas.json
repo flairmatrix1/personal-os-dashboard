@@ -1,0 +1,73 @@
+{
+  "updatedAt": "2026-08-23T14:24:03+08:00",
+  "items": [
+    {
+      "id": "video-apple-vision-shift",
+      "type": "video",
+      "title": "Apple сокращает команды Vision Pro: это пауза или смена XR-стратегии?",
+      "hook": "Apple подтвердила, что часть ролей затронута, а СМИ сообщают о сокращениях в командах Vision Pro и Siri. Разбираемся, означает ли это поворот к более лёгким очкам.",
+      "format": "YouTube / TikTok",
+      "reason": "Свежая крупная история вокруг одного из главных игроков spatial computing",
+      "priority": "hot",
+      "tags": ["Apple Vision Pro", "spatial computing", "индустрия"],
+      "sourceUrl": "https://techcrunch.com/2026/08/21/apple-is-reportedly-cutting-hundreds-of-jobs-from-siri-vision-pro-teams/"
+    },
+    {
+      "id": "video-pico-space-pro",
+      "type": "video",
+      "title": "Pico Space Pro: новый конкурент Vision Pro из Китая",
+      "hook": "Pico назвала свой новый шлем и назначила презентацию в Пекине. Что уже известно, а что пока остаётся предположением?",
+      "format": "YouTube Short / TikTok",
+      "reason": "Официальное название и дата дебюта создают понятный новостной повод",
+      "priority": "rising",
+      "tags": ["Pico", "MR", "Китай"],
+      "sourceUrl": "https://roadtovr.com/picos-vision-pro-competitor-release-date-pricr-name/"
+    },
+    {
+      "id": "video-supernatural-independent",
+      "type": "video",
+      "title": "Как VR-фитнес Supernatural получил вторую жизнь без Meta",
+      "hook": "После остановки разработки внутри Meta приложение не исчезло — команда рассказывает о возвращении в виде независимой компании.",
+      "format": "YouTube",
+      "reason": "Редкая бизнес-история о выживании VR-продукта после закрытия корпоративной команды",
+      "priority": "rising",
+      "tags": ["Supernatural", "Meta", "VR-фитнес"],
+      "sourceUrl": "https://www.uploadvr.com/how-supernatural-got-a-second-life-without-meta/"
+    },
+    {
+      "id": "portal-xr-form-factor-poll",
+      "type": "portal_post",
+      "title": "Что окажется массовым раньше: MR-шлем или лёгкие AR-очки?",
+      "hook": "На фоне сообщений о перестройке Vision Pro, анонса Pico Space Pro и заявленного интереса к XREAL AURA спросить аудиторию, какой форм-фактор победит.",
+      "format": "Опрос",
+      "reason": "Сразу несколько свежих историй дают повод обсудить направление рынка",
+      "priority": "hot",
+      "options": ["MR-шлем", "Лёгкие AR-очки", "Оба формата", "Ни один в ближайшие годы"],
+      "tags": ["Portal News", "AR-очки", "MR"],
+      "sourceUrl": "https://roadtovr.com/first-android-ar-glasses-xreal-aura-10k-reservations/"
+    },
+    {
+      "id": "portal-into-radius-2",
+      "type": "portal_post",
+      "title": "Into the Radius 2 выходит из раннего доступа на Quest 27 августа",
+      "hook": "Коротко рассказать, что версия для Quest 3 и Quest 3S получает кампанию и новый контент, и спросить, кто планирует играть.",
+      "format": "Новость + вопрос",
+      "reason": "Близкая дата релиза и понятный повод для реакции аудитории",
+      "priority": "rising",
+      "options": ["Буду играть", "Жду отзывы", "Играл на PC VR", "Не мой жанр"],
+      "tags": ["Portal News", "Quest 3", "VR-игры"],
+      "sourceUrl": "https://roadtovr.com/into-radius-2-quest-release-date/"
+    },
+    {
+      "id": "portal-xreal-reservations",
+      "type": "portal_post",
+      "title": "XREAL заявляет о 10 000 резерваций AURA до запуска",
+      "hook": "Подать цифру именно как заявление компании и обсудить, является ли ранняя резервация реальным спросом.",
+      "format": "Новость + дискуссия",
+      "reason": "Высокая заявленная цифра и Android XR дают сильный повод для обсуждения без рекламной подачи",
+      "priority": "watch",
+      "tags": ["Portal News", "XREAL", "Android XR"],
+      "sourceUrl": "https://roadtovr.com/first-android-ar-glasses-xreal-aura-10k-reservations/"
+    }
+  ]
+}

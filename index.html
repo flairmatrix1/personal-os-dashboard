@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ru" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Контент-пульт</title>
+  <style>
+    :root {
+      --bg: #f4f4ef;
+      --surface: #fffef9;
+      --surface-2: #ecece5;
+      --ink: #171813;
+      --muted: #686a61;
+      --line: #d8d9d0;
+      --accent: #e14d2a;
+      --accent-ink: #fff8f2;
+      --hot: #ba2d1d;
+      --rising: #ae6418;
+      --watch: #376c66;
+      --evergreen: #4f6750;
+      --radius: 15px;
+      --shadow: 0 14px 42px rgba(24, 25, 19, .07);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #151612;
+      --surface: #1e201a;
+      --surface-2: #292b24;
+      --ink: #f1f0e8;
+      --muted: #aaa99e;
+      --line: #383a32;
+      --accent: #ff7653;
+      --accent-ink: #1c100b;
+      --hot: #ff8168;
+      --rising: #e9a956;
+      --watch: #71b9ae;
+      --evergreen: #91b593;
+      --shadow: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      [data-theme="auto"] {
+        --bg: #151612;
+        --surface: #1e201a;
+        --surface-2: #292b24;
+        --ink: #f1f0e8;
+        --muted: #aaa99e;
+        --line: #383a32;
+        --accent: #ff7653;
+        --accent-ink: #1c100b;
+        --hot: #ff8168;
+        --rising: #e9a956;
+        --watch: #71b9ae;
+        --evergreen: #91b593;
+        --shadow: none;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 65%, transparent); outline-offset: 3px; }
+
+    .shell { width: min(1500px, 100%); margin: 0 auto; padding: 22px; }
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto auto;
+      gap: 18px;
+      align-items: center;
+      padding-bottom: 17px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand h1 { margin: 0; font-size: clamp(25px, 3vw, 40px); letter-spacing: -.045em; line-height: .95; }
+    .brand p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+    .clocks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .clock { min-width: 112px; padding: 9px 11px; border-left: 1px solid var(--line); }
+    .clock span { display: block; color: var(--muted); font: 11px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    .clock strong { display: block; margin-top: 4px; font: 700 20px/1 var(--mono); }
+    .icon-button {
+      width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%;
+      color: var(--ink); background: var(--surface); cursor: pointer;
+    }
+
+    .dashboard { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(310px, .85fr); gap: 18px; margin-top: 18px; }
+    .column { display: grid; align-content: start; gap: 18px; min-width: 0; }
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
+    .panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 17px 18px 14px; border-bottom: 1px solid var(--line); }
+    .panel-head h2 { margin: 0; font-size: 18px; letter-spacing: -.02em; }
+    .panel-head small { color: var(--muted); font: 11px/1.3 var(--mono); }
+    .list { margin: 0; padding: 0; list-style: none; }
+    .idea { display: grid; grid-template-columns: 45px minmax(0, 1fr) auto; gap: 13px; padding: 17px 18px; border-bottom: 1px solid var(--line); }
+    .idea:last-child { border-bottom: 0; }
+    .rank { color: var(--muted); font: 700 13px/1 var(--mono); padding-top: 4px; }
+    .idea h3 { margin: 0; font-size: 17px; line-height: 1.22; letter-spacing: -.015em; }
+    .idea p { margin: 7px 0 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+    .meta { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 10px; }
+    .chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 7px; color: var(--muted); font: 10px/1 var(--mono); text-transform: uppercase; }
+    .actions { display: flex; gap: 7px; align-items: flex-start; }
+    .action {
+      min-height: 36px; padding: 8px 11px; border: 1px solid var(--line); border-radius: 9px;
+      color: var(--ink); background: transparent; cursor: pointer; text-decoration: none; font-size: 12px; font-weight: 700;
+    }
+    .action:hover { border-color: var(--accent); color: var(--accent); }
+    .action.primary { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+
+    .signal { display: grid; gap: 8px; padding: 15px 18px; border-bottom: 1px solid var(--line); }
+    .signal:last-child { border-bottom: 0; }
+    .signal-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .status { font: 800 10px/1 var(--mono); letter-spacing: .08em; }
+    .status.hot { color: var(--hot); }
+    .status.rising { color: var(--rising); }
+    .status.watch { color: var(--watch); }
+    .status.evergreen { color: var(--evergreen); }
+    .signal h3 { margin: 0; font-size: 15px; line-height: 1.3; }
+    .signal p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+
+    .capture { padding: 16px 18px 18px; }
+    .capture textarea { width: 100%; min-height: 93px; resize: vertical; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); padding: 11px 12px; }
+    .capture-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: 9px; }
+    .capture select { min-height: 42px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg); color: var(--ink); padding: 0 10px; }
+
+    .lower { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .empty { padding: 26px 18px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .links { padding: 5px 18px 17px; }
+    .link-group h3 { margin: 15px 0 8px; color: var(--muted); font: 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 7px; }
+    .quick-link { border-bottom: 1px solid var(--line); padding: 5px 0; text-decoration: none; font-size: 14px; }
+    .quick-link:hover { color: var(--accent); border-color: var(--accent); }
+    .content-result { padding: 14px 18px; border-bottom: 1px solid var(--line); }
+    .content-result:last-child { border-bottom: 0; }
+    .content-result strong { display: block; }
+    .content-result p { color: var(--muted); margin: 6px 0 0; font-size: 13px; }
+
+    .footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; color: var(--muted); font: 10px/1.4 var(--mono); }
+    .toast { position: fixed; right: 20px; bottom: 20px; padding: 11px 14px; border-radius: 9px; background: var(--ink); color: var(--bg); font-size: 12px; opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .18s ease, transform .18s ease; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1000px) {
+      .topbar { grid-template-columns: 1fr auto; }
+      .clocks { grid-column: 1 / -1; justify-content: flex-start; }
+      .clock:first-child { border-left: 0; padding-left: 0; }
+      .dashboard { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .shell { padding: 14px; }
+      .idea { grid-template-columns: 30px minmax(0, 1fr); }
+      .idea .actions { grid-column: 2; }
+      .lower { grid-template-columns: 1fr; }
+      .clocks { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+      .clock { min-width: 0; padding: 7px; }
+      .clock strong { font-size: 16px; }
+      .footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Контент-пульт</h1>
+        <p id="today">Загрузка даты…</p>
+      </div>
+      <div class="clocks" aria-label="Мировое время">
+        <div class="clock"><span>Гуанчжоу</span><strong data-zone="Asia/Shanghai">--:--</strong></div>
+        <div class="clock"><span>Москва</span><strong data-zone="Europe/Moscow">--:--</strong></div>
+        <div class="clock"><span>Лос-Анджелес</span><strong data-zone="America/Los_Angeles">--:--</strong></div>
+      </div>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Переключить тему" title="Переключить тему">◐</button>
+    </header>
+
+    <section class="dashboard">
+      <div class="column">
+        <section class="panel">
+          <div class="panel-head"><h2>Что снять сегодня</h2><small id="ideasUpdated">—</small></div>
+          <ol class="list" id="videoIdeas"><li class="empty">Загружаю идеи…</li></ol>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h2>Portal News</h2><small>готовые форматы</small></div>
+          <ol class="list" id="portalIdeas"><li class="empty">Загружаю темы…</li></ol>
+        </section>
+
+        <div class="lower">
+          <section class="panel">
+            <div class="panel-head"><h2>Что сработало</h2><small id="channelUpdated">—</small></div>
+            <div id="topContent"><div class="empty">Загружаю результаты…</div></div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>Быстрые ссылки</h2><small>рабочее</small></div>
+            <div class="links" id="quickLinks"><div class="empty">Загружаю ссылки…</div></div>
+          </section>
+        </div>
+      </div>
+
+      <aside class="column">
+        <section class="panel">
+          <div class="panel-head"><h2>Горячие сигналы</h2><small id="newsUpdated">—</small></div>
+          <div id="signals"><div class="empty">Загружаю новости…</div></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h2>Быстрый захват</h2><small>хранится в этом браузере</small></div>
+          <div class="capture">
+            <label for="captureText" class="chip">Новая мысль</label>
+            <textarea id="captureText" placeholder="Запишите идею, пока она не потерялась…"></textarea>
+            <div class="capture-row">
+              <select id="captureType" aria-label="Тип идеи">
+                <option value="Видео">Видео</option>
+                <option value="Portal News">Portal News</option>
+                <option value="Изучить">Изучить</option>
+              </select>
+              <button class="action primary" id="captureCopy" type="button">Скопировать</button>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <span>Локальная версия · данные не отправляются наружу</span>
+      <span id="loadState">Загрузка данных…</span>
+    </footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite">Скопировано</div>
+
+  <script>
+    const $ = (selector) => document.querySelector(selector);
+    const safe = (value = "") => String(value);
+
+    function escapeHtml(value) {
+      return safe(value).replace(/[&<>'"]/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
+    }
+
+    function formatUpdated(value) {
+      if (!value) return "не указано";
+      const date = new Date(value);
+      return Number.isNaN(date.valueOf()) ? "не указано" : `обновлено ${new Intl.DateTimeFormat("ru", {day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit"}).format(date)}`;
+    }
+
+    function tick() {
+      const now = new Date();
+      $("#today").textContent = new Intl.DateTimeFormat("ru", {weekday:"long", day:"numeric", month:"long"}).format(now);
+      document.querySelectorAll("[data-zone]").forEach(node => {
+        node.textContent = new Intl.DateTimeFormat("ru", {timeZone: node.dataset.zone, hour:"2-digit", minute:"2-digit", hour12:false}).format(now);
+      });
+    }
+
+    function showToast(message = "Скопировано") {
+      const toast = $("#toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => toast.classList.remove("show"), 1400);
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (_) {
+        const area = document.createElement("textarea");
+        area.value = text;
+        area.style.position = "fixed";
+        area.style.opacity = "0";
+        document.body.append(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
+      }
+      showToast();
+    }
+
+    function ideaCopyText(item) {
+      const parts = [item.title, item.hook && `Хук: ${item.hook}`, item.format && `Формат: ${item.format}`, item.reason && `Почему сейчас: ${item.reason}`, item.sourceUrl && `Источник: ${item.sourceUrl}`];
+      if (Array.isArray(item.options) && item.options.length) parts.push(`Варианты: ${item.options.join(" / ")}`);
+      return parts.filter(Boolean).join("\n");
+    }
+
+    function renderIdeas(target, items, emptyText) {
+      const node = $(target);
+      if (!items.length) {
+        node.innerHTML = `<li class="empty">${escapeHtml(emptyText)}</li>`;
+        return;
+      }
+      node.innerHTML = items.slice(0, 3).map((item, index) => `
+        <li class="idea">
+          <span class="rank">0${index + 1}</span>
+          <div>
+            <h3>${escapeHtml(item.title)}</h3>
+            ${item.hook ? `<p>${escapeHtml(item.hook)}</p>` : ""}
+            <div class="meta">
+              ${item.format ? `<span class="chip">${escapeHtml(item.format)}</span>` : ""}
+              ${item.isExample ? '<span class="chip">пример</span>' : ""}
+              ${(item.tags || []).slice(0, 2).map(tag => `<span class="chip">${escapeHtml(tag)}</span>`).join("")}
+            </div>
+          </div>
+          <div class="actions">
+            <button class="action primary" type="button" data-copy-id="${escapeHtml(item.id)}">Копировать</button>
+            ${item.sourceUrl ? `<a class="action" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Источник</a>` : ""}
+          </div>
+        </li>`).join("");
+      node.querySelectorAll("[data-copy-id]").forEach(button => {
+        const item = items.find(candidate => candidate.id === button.dataset.copyId);
+        button.addEventListener("click", () => copyText(ideaCopyText(item)));
+      });
+    }
+
+    function renderSignals(items) {
+      const node = $("#signals");
+      if (!items.length) {
+        node.innerHTML = '<div class="empty">Пока нет проверенных сигналов. Добавьте реальные новости в <code>news.json</code>.</div>';
+        return;
+      }
+      node.innerHTML = items.slice(0, 5).map(item => {
+        const status = safe(item.signal || "watch").toLowerCase();
+        return `<article class="signal">
+          <div class="signal-top"><span class="status ${escapeHtml(status)}">${escapeHtml(status.toUpperCase())}</span><span class="chip">${escapeHtml(item.category || "XR")}</span></div>
+          <h3>${escapeHtml(item.title)}</h3>
+          ${item.contentAngle ? `<p>${escapeHtml(item.contentAngle)}</p>` : ""}
+          <div class="actions">
+            ${item.sourceUrl ? `<a class="action" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Открыть</a>` : ""}
+            <button class="action" type="button" data-signal-copy="${escapeHtml(item.id || item.title)}">В идею</button>
+          </div>
+        </article>`;
+      }).join("");
+      node.querySelectorAll("[data-signal-copy]").forEach(button => {
+        const item = items.find(candidate => safe(candidate.id || candidate.title) === button.dataset.signalCopy);
+        button.addEventListener("click", () => copyText(ideaCopyText(item)));
+      });
+    }
+
+    function renderTopContent(items) {
+      const node = $("#topContent");
+      if (!items.length) {
+        node.innerHTML = '<div class="empty">Добавьте только реальные опубликованные материалы и выводы в <code>channel.json</code>.</div>';
+        return;
+      }
+      node.innerHTML = items.slice(0, 4).map(item => `<article class="content-result"><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.platform || "")} ${item.insight ? `· ${escapeHtml(item.insight)}` : ""}</p></article>`).join("");
+    }
+
+    function renderLinks(groups) {
+      const node = $("#quickLinks");
+      if (!groups.length) {
+        node.innerHTML = '<div class="empty">Добавьте безопасные рабочие ссылки в <code>links.json</code>.</div>';
+        return;
+      }
+      node.innerHTML = groups.map(group => `<section class="link-group"><h3>${escapeHtml(group.title)}</h3><div class="link-row">${(group.items || []).map(item => `<a class="quick-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>`).join("")}</div></section>`).join("");
+    }
+
+    async function loadJson(path) {
+      const response = await fetch(path, {cache: "no-store"});
+      if (!response.ok) throw new Error(`${path}: ${response.status}`);
+      return response.json();
+    }
+
+    async function loadDashboard() {
+      const jobs = await Promise.allSettled([loadJson("ideas.json"), loadJson("news.json"), loadJson("channel.json"), loadJson("links.json")]);
+      const [ideasResult, newsResult, channelResult, linksResult] = jobs;
+      if (ideasResult.status === "fulfilled") {
+        const data = ideasResult.value;
+        renderIdeas("#videoIdeas", (data.items || []).filter(item => item.type === "video"), "Добавьте идеи для видео в ideas.json.");
+        renderIdeas("#portalIdeas", (data.items || []).filter(item => item.type === "portal_post"), "Добавьте темы Portal News в ideas.json.");
+        $("#ideasUpdated").textContent = formatUpdated(data.updatedAt);
+      } else {
+        renderIdeas("#videoIdeas", [], "Не удалось загрузить ideas.json.");
+        renderIdeas("#portalIdeas", [], "Не удалось загрузить ideas.json.");
+      }
+      if (newsResult.status === "fulfilled") {
+        renderSignals(newsResult.value.items || []);
+        $("#newsUpdated").textContent = formatUpdated(newsResult.value.updatedAt);
+      } else renderSignals([]);
+      if (channelResult.status === "fulfilled") {
+        renderTopContent(channelResult.value.topContent || []);
+        $("#channelUpdated").textContent = formatUpdated(channelResult.value.updatedAt);
+      } else renderTopContent([]);
+      if (linksResult.status === "fulfilled") renderLinks(linksResult.value.groups || []);
+      else renderLinks([]);
+      const failures = jobs.filter(job => job.status === "rejected").length;
+      $("#loadState").textContent = failures ? `Ошибки загрузки: ${failures}` : "Все локальные данные загружены";
+    }
+
+    const themeOrder = ["auto", "light", "dark"];
+    const storedTheme = localStorage.getItem("dashboard-theme") || "auto";
+    document.documentElement.dataset.theme = themeOrder.includes(storedTheme) ? storedTheme : "auto";
+    $("#themeToggle").addEventListener("click", () => {
+      const current = document.documentElement.dataset.theme;
+      const next = themeOrder[(themeOrder.indexOf(current) + 1) % themeOrder.length];
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem("dashboard-theme", next);
+      showToast(`Тема: ${next}`);
+    });
+
+    const captureText = $("#captureText");
+    const captureType = $("#captureType");
+    captureText.value = localStorage.getItem("dashboard-capture") || "";
+    captureText.addEventListener("input", () => localStorage.setItem("dashboard-capture", captureText.value));
+    $("#captureCopy").addEventListener("click", () => {
+      const text = captureText.value.trim();
+      if (!text) return showToast("Сначала запишите идею");
+      copyText(`[${captureType.value}] ${text}`);
+    });
+
+    tick();
+    setInterval(tick, 30000);
+    loadDashboard();
+  </script>
+</body>
+</html>

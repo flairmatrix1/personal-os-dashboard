@@ -1,0 +1,21 @@
+{
+  "updatedAt": "2026-08-23T14:15:00+08:00",
+  "groups": [
+    {
+      "title": "Создание",
+      "items": [
+        {"title": "Google Docs", "url": "https://docs.google.com/"},
+        {"title": "YouTube Studio", "url": "https://studio.youtube.com/"},
+        {"title": "TikTok Studio", "url": "https://www.tiktok.com/tiktokstudio"}
+      ]
+    },
+    {
+      "title": "Исследования",
+      "items": [
+        {"title": "Reddit", "url": "https://www.reddit.com/"},
+        {"title": "X", "url": "https://x.com/"},
+        {"title": "YouTube", "url": "https://www.youtube.com/"}
+      ]
+    }
+  ]
+}
