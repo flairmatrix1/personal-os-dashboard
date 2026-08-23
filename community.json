@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T09:28:40+00:00",
+  "updatedAt": "2026-08-23T09:29:13+00:00",
   "methodNote": "Reddit оценивается по позиции в Hot; X — по публичным метрикам; Threads — по TOP-поиску. Это сигналы обсуждаемости, не исследование всей аудитории.",
   "items": [
     {
@@ -32,7 +32,7 @@
       "publishedAt": "2026-08-23T02:27:38Z",
       "category": "Компьютеры",
       "signal": "hot",
-      "engagementScore": 91.2,
+      "engagementScore": 91.1,
       "engagementBasis": "Позиция #1 среди Hot-постов r/hardware; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Google reportedly taps AMD to design next-generation TPU — hybrid AI ASIC could integrate on-package CPU cores for reinforcement learning — что вы думаете?",
@@ -200,7 +200,7 @@
       "publishedAt": "2026-08-22T21:23:56Z",
       "category": "Игры",
       "signal": "hot",
-      "engagementScore": 84.1,
+      "engagementScore": 84.0,
       "engagementBasis": "Позиция #1 среди Hot-постов r/Games; числовые апвоуты и комментарии RSS не раскрывает",
       "metrics": {},
       "pollQuestion": "Final Fantasy XII CO OP Mod Trailer Ivalice Together — что вы думаете?",
